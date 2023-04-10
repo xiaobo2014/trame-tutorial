@@ -68,27 +68,20 @@ volumeProperty.SetInterpolationType(1)
 volumeProperty.SetUseClippedVoxelIntensity(1)
 volumeProperty.SetClippedVoxelIntensity(-10000000000)
 
-
 # Create transfer mapping scalar value to color.
-colorTransferFunction = vtkColorTransferFunction()
-colorTransferFunction.AddRGBPoint( 177, 0.651, 0, 0)
-colorTransferFunction.AddRGBPoint( 239, 0.933, 0, 0)
-colorTransferFunction.AddRGBPoint( 302, 1, 0.8, 0.0627)
-colorTransferFunction.AddRGBPoint( 496, 1, 0.906, 0.667)
-colorTransferFunction.AddRGBPoint( 677, 1, 0.882, 0.216)
-colorTransferFunction.AddRGBPoint( 809, 1, 1, 1)
-volumeProperty.SetColor(colorTransferFunction)
+colorFun = vtkColorTransferFunction()
+colorFun.AddRGBPoint( 25, 0.753, 0.086, 0.086)
+colorFun.AddRGBPoint( 184, 1, 1, 0.776)
+colorFun.AddRGBPoint( 323, 1, 0.941, 0.824)
+colorFun.AddRGBPoint( 481, 1, 0.902, 0.718)
+colorFun.AddRGBPoint( 650, 1, 0.961, 0.925)
+volumeProperty.SetColor(colorFun)
 
 # Create transfer mapping scalar value to opacity.
 opacityFun = vtkPiecewiseFunction()
-opacityFun.AddPoint(-217, 0)
-opacityFun.AddPoint(-108.75, 0.00185)
-opacityFun.AddPoint(-0.5, 0.0244)
-opacityFun.AddPoint(108, 0.1)
-opacityFun.AddPoint(324, 0.467)
-opacityFun.AddPoint(432, 0.712)
-opacityFun.AddPoint(540, 0.916)
-opacityFun.AddPoint(649, 1)
+opacityFun.AddPoint(10, 0)
+opacityFun.AddPoint(323, 0.92)
+opacityFun.AddPoint(650, 1)
 volumeProperty.SetScalarOpacity(opacityFun)
 
 
@@ -104,7 +97,7 @@ volumeProperty.SetGradientOpacity(gradientFun)
 
 
 # scalar opacity unit distance
-volumeProperty.SetScalarOpacityUnitDistance(0.03)
+volumeProperty.SetScalarOpacityUnitDistance(0.05)
 
 
 diffuseFactor = 1.0
